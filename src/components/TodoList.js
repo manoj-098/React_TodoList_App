@@ -29,7 +29,7 @@ function TodoList() {
     let temp=[...allTodos]
     temp.push(list)
     setAllTodos(temp)
-    localStorage.setItem('KEY',JSON.stringify(temp))
+    // localStorage.setItem('KEY',JSON.stringify(temp))
     setValue('')
     // ListItem
     // console.log("VALUE: "+value);
@@ -44,7 +44,7 @@ function TodoList() {
         item.task!=task
     )})
     setAllTodos(list)
-    localStorage.setItem('KEY',JSON.stringify(list))
+    // localStorage.setItem('KEY',JSON.stringify(list))
     // console.log('INDEX: '+index)
   }
   function strike(task)
@@ -55,17 +55,17 @@ function TodoList() {
 
       //APPROACH-2
       // setAllTodos(allTodos.map(item=>item.task==task?{...item,isStrike:!item.isStrike}:item))
-      localStorage.setItem('KEY',JSON.stringify(temp))
+      // localStorage.setItem('KEY',JSON.stringify(temp))
   }
   const handleSubmit=event=>{
     event.preventDefault();
     addTask()
   }
-    // useEffect(()=>{},)
-    useEffect(()=>{
-    let savedlist=JSON.parse(localStorage.getItem('KEY'))
-    setAllTodos(savedlist)
-  },[])
+  
+  //   useEffect(()=>{
+  //   let savedlist=JSON.parse(localStorage.getItem('KEY'))
+  //   setAllTodos(savedlist)
+  // },[])
 
   return (
     <form onSubmit={handleSubmit}>
